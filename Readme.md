@@ -133,5 +133,12 @@ Require the package.json file into the shared key in the webpack.dev.js file.
 4. Probably need a CI/CD pipeline of some sort.
 5. At present, the remoteEntry.js file name is fixed! Need to think about caching issues.
 
+### Workflow for Deploying a Container
+* Whenever code is pushed to the master/main branch and the commit contains a change to the container folder
+1. Change into the container folder
+2. Install dependencies
+3. Create a production build using webpack
+4. Upload the result to AWS S3
+
 
 
