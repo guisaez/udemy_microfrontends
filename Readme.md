@@ -140,6 +140,8 @@ Require the package.json file into the shared key in the webpack.dev.js file.
 3. Create a production build using webpack
 4. Upload the result to AWS S3
 
+Any time you add new files to S3 bucket cloudfront picks them up but ignores all updates to files. One way we can specify changes is using Invalidation. This can be automated. See deployment-workflow
+
 
 
 
