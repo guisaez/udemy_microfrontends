@@ -156,15 +156,59 @@ Any time you add new files to S3 bucket cloudfront picks them up but ignores all
 ### CSS Scoping
 
 * Custom CSS ypu are writing for your project
-1. Use a CSS-in-JS library
-2. Use Vue's built-in component style scoping
-3. Use Angular's built-in component style scoping
-4. "Namespace" all your CSS
+    1. Use a CSS-in-JS library
+    2. Use Vue's built-in component style scoping
+    3. Use Angular's built-in component style scoping
+    4. "Namespace" all your CSS
 
 
 * CSS coming from a component library or CSS library (bootstrap)
-1. Use a component library that does css-in-js
-2. Manually build the css library and apply the namespacing techniques to it.
+    1. Use a component library that does css-in-js
+    2. Manually build the css library and apply the namespacing techniques to it.
+
+## Implementing Multi-Tier Navigation
+
+### Project Requirements
+1. Both the Container + Individual SubApps need routing features
+    * Users can navigate around to different subapps using routing logic built into the COntainer.
+    * Users can navigate around in a subapp using routing logic built into the subapp itself.
+    * Not all subapps will require routing.
+
+2. Sub-apps might need to add in new pages/routes all the time.
+    * New routes added to the subapp shouldn't require a redeploy of the container. 
+
+3. We might need to show two or more microfrontends at the same time.
+    * This will occur all the time if we have some kind of sidebar nav that is a separate microfrontend. 
+
+4. We want to use off-the-shelf routing solutions.
+    * Building a routing library can be hard - we don't want to author a new one!
+    * Some amount of custom coding is OK.
+
+5. We need navigation features in sub-apps in both hosted mode and isolation.
+    * Developing for each environment should be easy - a developer should immediately be able to see what path they are visiting.
+
+6. If different apps need to communicate information about routing, it should be done in as generic fashion as possible.
+    * Each app might be using a completely different navigation framework. 
+    * We might swap out or upgrade navigation libraries all the time - shouldn't require a rewrite of the rest of the app. 
+
+Browser History Object: Look at the path portion of the url (everything after the domain) to figure out what the current path is. 
+
+Hash History: look at everything after the '#' in the URL to figure out the current path.
+
+Memory or Abstract History: Keep track of the current path in memory.
+
+Browser History inside container and Memory History inside the Sub-Applications.
+
+Communication between apps:
+* Down:
+    1. User clicks link governed by Container (Browser History)
+    2. Communicate change down to Marketing
+    3. Marketing's Memory History should update its current path.
+
+* Up:
+    1. User click link governed by Marketing (Memory History)
+    2. Communicate change up to Container
+    3. Container's Browser History should update its current path.
 
 
 
