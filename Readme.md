@@ -153,6 +153,18 @@ Any time you add new files to S3 bucket cloudfront picks them up but ignores all
 
 ## Handling CSS in Microfrontends
 
+### CSS Scoping
+
+* Custom CSS ypu are writing for your project
+1. Use a CSS-in-JS library
+2. Use Vue's built-in component style scoping
+3. Use Angular's built-in component style scoping
+4. "Namespace" all your CSS
+
+
+* CSS coming from a component library or CSS library (bootstrap)
+1. Use a component library that does css-in-js
+2. Manually build the css library and apply the namespacing techniques to it.
 
 
 
