@@ -151,6 +151,8 @@ Any time you add new files to S3 bucket cloudfront picks them up but ignores all
 5. When ready to deploy, merge the PR.
 6. Workflow detects a change to the master/main branch, deployment runs!
 
+## Handling CSS in Microfrontends
+
 
 
 
