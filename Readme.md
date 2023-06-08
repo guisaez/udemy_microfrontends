@@ -143,5 +143,15 @@ Require the package.json file into the shared key in the webpack.dev.js file.
 Any time you add new files to S3 bucket cloudfront picks them up but ignores all updates to files. One way we can specify changes is using Invalidation. This can be automated. See deployment-workflow
 
 
+### Production Style Workflow Example
+1. Each team develops features on git branches named something like 'container-dev'
+2. Feature complete and ready for deployment? Push branch to github.
+3. Create pull request to merge into master/main
+4. Other engineers review 
+5. When ready to deploy, merge the PR.
+6. Workflow detects a change to the master/main branch, deployment runs!
+
+
+
 
 
