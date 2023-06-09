@@ -210,6 +210,21 @@ Communication between apps:
     2. Communicate change up to Container
     3. Container's Browser History should update its current path.
 
+### Lazily Loading SubApps
+
+Load code related to page only when the page is accessed. 
+
+### Notes Around Authentication
+
+1. Auth app is signing in/up users
+2. Auth app is not enforcing permissions, allowing access to certain routes, or figuring out if user is signed in
+3. Two approaches for handling auth
+    * Each app is aware of auth
+    * Centralize auth in Container !!! Done in this project.
+
+
+
+
 
 
 
